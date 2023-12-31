@@ -1,0 +1,17 @@
+apiVersion: api.vyashemang.github.io/v1alpha1
+kind: Scaler
+metadata:
+  labels:
+    app.kubernetes.io/name: scaler
+    app.kubernetes.io/instance: scaler-sample
+    app.kubernetes.io/part-of: scaler-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: scaler-operator
+  name: scaler-sample
+spec:
+  start: 5
+  end: 21
+  replicas: 9
+  deployments:
+    - name: nginx
+      namespace: default
